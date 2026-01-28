@@ -6,7 +6,7 @@ folder_path = './'
 # 遍历 0 到 24
 for i in range(25):
     # 构建原始文件名，例如 "0_result_boxes.npy"
-    old_name = f"{i}_boxes.npy"
+    old_name = f"{i}_boxes_corrected.npy"
     
     # 检查文件是否存在，防止报错
     if os.path.exists(os.path.join(folder_path, old_name)):

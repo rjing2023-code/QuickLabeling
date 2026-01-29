@@ -54,7 +54,7 @@ def convert_from_yolo_format(yolo_box, img_width, img_height):
 def main():
     parser = argparse.ArgumentParser(description="Export annotations to YOLO format dataset")
     parser.add_argument("--video_dir", type=str, required=True, help="Directory containing video files")
-    parser.add_argument("--json_file", type=str, default="annotations copy.json", help="Path to annotations json file")
+    parser.add_argument("--json_file", type=str, default="annotations2-2_3-2.json", help="Path to annotations json file")
     parser.add_argument("--output_dir", type=str, default="dataset", help="Output directory for dataset")
     parser.add_argument("--debug", action="store_true", help="Enable debug mode: draw boxes on images and save to 'debug' folder")
     
@@ -143,10 +143,10 @@ def main():
             # Format: video_name_frame_000123
             file_basename = f"{video_basename}_frame_{frame_idx+1:06d}"
             
-            image_path = os.path.join(images_dir, f"{file_basename}.jpg")
+            image_path = os.path.join(images_dir, f"{file_basename}.png")
             label_path = os.path.join(labels_dir, f"{file_basename}.txt")
             
-            # Save original image
+            # Save original image (PNG is lossless)
             cv2.imwrite(image_path, frame)
             
             # Prepare debug image if needed

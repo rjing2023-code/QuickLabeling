@@ -1,5 +1,6 @@
 venv/
 dataset/
+json/
 __pycache__/
 *.pyc
 *.pyo

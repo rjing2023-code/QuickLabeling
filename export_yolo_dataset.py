@@ -4,6 +4,9 @@ import cv2
 import argparse
 import sys
 
+# 导出YOLO数据集脚本
+# 该脚本用于将标注好的视频数据集导出为YOLO格式的数据集，用于YOLO模型的训练和评估
+
 def convert_to_yolo_format(box, img_width, img_height):
     """
     Convert [x1, y1, x2, y2] to [x_center, y_center, width, height] normalized.
@@ -54,7 +57,7 @@ def convert_from_yolo_format(yolo_box, img_width, img_height):
 def main():
     parser = argparse.ArgumentParser(description="Export annotations to YOLO format dataset")
     parser.add_argument("--video_dir", type=str, required=True, help="Directory containing video files")
-    parser.add_argument("--json_file", type=str, default="annotations2-2_3-2.json", help="Path to annotations json file")
+    parser.add_argument("--json_file", type=str, default="annotations.json", help="Path to annotations json file")
     parser.add_argument("--output_dir", type=str, default="dataset", help="Output directory for dataset")
     parser.add_argument("--debug", action="store_true", help="Enable debug mode: draw boxes on images and save to 'debug' folder")
     
